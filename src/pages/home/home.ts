@@ -8,12 +8,12 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class HomePage {
   app: any = {nom: String,version: Number, complement: String};
+  base64Image: String;
 
   constructor(public navCtrl: NavController, public camera: Camera) {
     this.app.nom = "Projet";
     this.app.version = 3.0;
     this.app.complement = "du bogoss";
-
   }
 
   rename() {
