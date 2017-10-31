@@ -33,6 +33,19 @@
   <button color="yellow" (click)=increment() ion-button small> + 1 </button>
 </ion-item>
 
+<ion-content class="home">
+  <ion-card>
+    <ion-card-content>
+      Hello World, this is my camera app
+
+      <button (click)="takePicture()">Take a Picture</button>
+
+      Latest Picture:
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
 
 
   <button ion-button secondary menuToggle>Toggle Menu</button>

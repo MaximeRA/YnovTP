@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Camera } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  app: any = {nom: String,version: Number, complement: String};
+  app: any = {nom: String,version: Number, complement: String, base64Image: String};
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public camera: Camera) {
     this.app.nom = "Projet";
     this.app.version = 3.0;
     this.app.complement = "du bogoss";
+
   }
 
   rename() {
@@ -26,15 +28,16 @@ export class HomePage {
     this.app.version+=1;
   }
 
+  takePicture(){
+     this.app.camera.getPicture({
+         destinationType: this.app.camera.DestinationType.DATA_URL,
+         targetWidth: 1000,
+         targetHeight: 1000
+     }).then((imageData) => {
+       // imageData is a base64 encoded string
+         this.app.base64Image = "data:image/jpeg;base64," + imageData;
+     }, (err) => {
+         console.log(err);
+     });
+   }
 }
-
-/*
-  class App {
-    constructor(nom:String, version:Number) {
-      nom: String;
-      version: Number;
-
-    }
-
-}
-*/
