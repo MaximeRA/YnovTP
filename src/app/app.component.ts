@@ -10,6 +10,7 @@ import { ListPage } from '../pages/list/list';
   templateUrl: 'app.html'
 })
 export class MyApp {
+  hello: Plop;
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
@@ -42,3 +43,7 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+
+  class Plop {
+
+  }
