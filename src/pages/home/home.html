@@ -36,19 +36,13 @@
 <ion-content class="home">
   <ion-card>
     <ion-card-content>
-      Hello World, this is my camera app
 
-      <button (click)="takePicture()">Take a Picture</button>
+      <button large (click)="takePicture()">Take a Picture</button>
 
       Latest Picture:
       <img [src]="base64Image" *ngIf="base64Image" />
     </ion-card-content>
   </ion-card>
 </ion-content>
-
-
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-
 
 </ion-content>
