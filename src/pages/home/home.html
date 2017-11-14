@@ -49,7 +49,7 @@
       <button large (click)="takePicture()">Take a Picture</button>
 
       Latest Picture:
-      <img src= {{ base64Image }} />
+      <img [src] =  base64Image />
     </ion-card-content>
   </ion-card>
 </ion-content>
