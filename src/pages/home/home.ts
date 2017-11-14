@@ -7,12 +7,15 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
-  app: any = {nom: String,version: Number, complement: String, base64Image: String, Base64ToGallery: String};
+  app: any = {nom: String,version: Number, complement: String};
+  base64Image: String;
 
   constructor(public navCtrl: NavController,
               public camera: Camera,
               private base64ToGallery: Base64ToGallery) {
+
     this.app.nom = "Projet";
     this.app.version = 3.0;
     this.app.complement = "du bogoss";

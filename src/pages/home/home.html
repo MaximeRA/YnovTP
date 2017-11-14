@@ -28,7 +28,7 @@
   </ion-item>
 
   <ion-item>
-  <button color="danger" (click)=rename() ion-button large>Vazy TUES-LES</button>
+  <button color="danger" (click)=rename() ion-button large>Gros Bouton Rouge</button>
   <button color="blue" (click)=okay() ion-button small>Reponse</button>
   <button color="yellow" (click)=increment() ion-button small> + 1 </button>
 </ion-item>
@@ -46,9 +46,12 @@
   </ion-card>
 </ion-content>
 
+      <button large (click)="takePicture()">Take a Picture</button>
 
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-
+      Latest Picture:
+      <img src= {{ base64Image }} />
+    </ion-card-content>
+  </ion-card>
+</ion-content>
 
 </ion-content>
