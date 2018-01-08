@@ -1,0 +1,24 @@
+
+  <ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Video</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+  <ion-content padding>
+    <button ion-button block color="dark" id="videoCapture" (click)="videoCapture()"><ion-icon name="camera-retro"> Prendre une vidéo</ion-icon></button>
+    <ion-card *ngIf="videoTaken"> <br/> Dernière video:
+
+      <ion-card-content>
+        <video id="videoTaken" controls="controls" *ngIf="videoTaken" autoplay="false" [src]="videoTaken">
+    Your browser does not support the video tag.
+  </video>
+      </ion-card-content>
+      <ion-item #msg id="msg">
+      </ion-item>
+    </ion-card>
+  </ion-content>
